@@ -11,13 +11,13 @@ export function Header({ cartCount }) {
         </Link>
       </div>
       <div className="right-side">
-        <a>
+        <Link to="/CartPage">
           <p className="cart-count">{cartCount}</p>
           <img
             src="../src/assets/shopping-cart-outline-svgrepo-com.svg"
             className="cart-icon"
           ></img>
-        </a>
+        </Link>
       </div>
     </div>
   );

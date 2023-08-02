@@ -14,8 +14,8 @@ export function ItemCard({ item, setCartCount }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          cartAdd(item);
-          setCartCount(getCartSize);
+          cartAdd({ ...item, count: count });
+          setCartCount(getCartSize());
         }}
       >
         <button className="add-to-cart">Add to cart</button>
@@ -23,7 +23,7 @@ export function ItemCard({ item, setCartCount }) {
           type="number"
           className="count-input"
           value={count}
-          onChange={(e) => setCount(e.target.value)}
+          onChange={(e) => setCount(+e.target.value)}
           min="1"
           max="30"
         ></input>
@@ -37,5 +37,5 @@ ItemCard.propTypes = {
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   }).isRequired,
-  setCartCount: PropTypes.number.isRequired,
+  setCartCount: PropTypes.func.isRequired,
 };
