@@ -1,0 +1,13 @@
+.category-page {
+    display:flex;
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 60px;
+    justify-content: center;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    font-size: 55px;
+    font-weight: 900;
+}
