@@ -14,7 +14,7 @@ export function Header({ cartCount }) {
         <Link to="/CartPage">
           <p className="cart-count">{cartCount}</p>
           <img
-            src="../src/assets/shopping-cart-outline-svgrepo-com.svg"
+            src="../assets/shopping-cart-outline-svgrepo-com.svg"
             className="cart-icon"
           ></img>
         </Link>
