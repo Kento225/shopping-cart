@@ -1,10 +1,9 @@
 import "./ItemCard.css";
 import PropTypes from "prop-types";
 import { cartAdd } from "../cart";
-import { getCartSize } from "../cart";
 import { useState } from "react";
 
-export function ItemCard({ item, setCartCount }) {
+export function ItemCard({ item, updateCartCount }) {
   const [count, setCount] = useState(1);
   return (
     <div className="item-card">
@@ -15,7 +14,7 @@ export function ItemCard({ item, setCartCount }) {
         onSubmit={(e) => {
           e.preventDefault();
           cartAdd({ ...item, count: count });
-          setCartCount(getCartSize());
+          updateCartCount();
         }}
       >
         <button className="add-to-cart">Add to cart</button>
@@ -37,5 +36,6 @@ ItemCard.propTypes = {
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   }).isRequired,
-  setCartCount: PropTypes.func.isRequired,
+  handleCartEdit: PropTypes.func.isRequired,
+  updateCartCount: PropTypes.func.isRequired,
 };

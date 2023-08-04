@@ -1,0 +1,19 @@
+.cart-item {
+    display: flex;
+    background-color: white;
+    border: solid black 2px;
+    height: 15rem;
+    padding: 10px;
+    gap: 20px;
+    width: 80vw;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.cart-item p {
+    font-size: 80%;
+}
+.cart-item img{
+    width: 119px;
+    height: 116px;
+}

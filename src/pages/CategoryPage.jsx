@@ -1,17 +1,18 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
 import "../main.css";
 import { ItemCard } from "../components/ItemCard";
 import { Header } from "../components/Header";
 import "./CategoryPage.css";
-import { cartSize } from "../cart";
+import { CartContext } from "../CartContext";
 
 export function CategoryPage() {
   const { category } = useParams();
 
   const [items, setItems] = useState([]);
 
-  const [cartCount, setCartCount] = useState(cartSize);
+  const { cartCount, updateCartCount } = useContext(CartContext);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${category}`, {
@@ -28,7 +29,11 @@ export function CategoryPage() {
       <div className="category-page">
         {items.map((item) => {
           return (
-            <ItemCard item={item} key={item.id} setCartCount={setCartCount} />
+            <ItemCard
+              item={item}
+              key={item.id}
+              updateCartCount={updateCartCount}
+            />
           );
         })}
       </div>

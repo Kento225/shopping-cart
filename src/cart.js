@@ -1,4 +1,4 @@
-export const cart = [];
+export let cart = [];
 export let cartSize = 0;
 
 export function getCartSize() {
@@ -6,7 +6,6 @@ export function getCartSize() {
   cart.forEach((cartItem) => {
     cartSize += cartItem.count;
   });
-  console.log(cartSize);
   return cartSize;
 }
 
@@ -18,5 +17,26 @@ export function cartAdd(item) {
   } else {
     cart.push(item);
   }
-  console.log(cartSize);
+}
+
+export function getTotalPrice() {
+  let totalPrice = 0;
+  cart.forEach((item) => {
+    totalPrice += item.price * item.count;
+  });
+  return totalPrice;
+}
+export function editCart(id, operation) {
+  const updatedCart = cart.map((item) => {
+    if (item.id === id) {
+      if (operation === "-") {
+        item.count = item.count - 1;
+      } else if (operation === "+") {
+        item.count += 1;
+      }
+    }
+    return item;
+  });
+
+  cart = updatedCart.filter((item) => item.count > 0);
 }

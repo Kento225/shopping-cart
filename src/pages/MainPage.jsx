@@ -1,11 +1,14 @@
 import { Header } from "../components/Header";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
+import { CartContext } from "../CartContext";
+import { useContext } from "react";
 
 export function MainPage() {
+  const { cartCount } = useContext(CartContext);
   return (
     <>
-      <Header />
+      <Header cartCount={cartCount} />
       <div className="banner">Shop Everything: Find Your Perfect Fit!</div>
       <div className="categories">
         <Link

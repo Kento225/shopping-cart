@@ -10,11 +10,12 @@
     align-items: center;
     justify-content: center;
     font-weight: 900;
-    font-size: 3vw;
-    background-image: url("src/assets/gray-building-grayscale-pattern-lines-texture-geometric-5120x2880-3903.jpg");
-    height: 19vw;
+    font-size: 4vw;
+    background-image: url("../src/assets/rondale170700019-photoaidcom-invert.jpg");
+    height: 15rem;
     width: 100%;
     margin-bottom: 4vw;
+    color: white;
 
 }
 
